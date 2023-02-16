@@ -312,16 +312,101 @@ kristynsCloset.splice(6,0,"rayban");
 console.log(kristynsCloset[6]);
 kristynsCloset[5]="stained yellow knit hat";
 console.log(kristynsCloset[5]);
+let shirt=thomsCloset[0][0];
+let pants=thomsCloset[1][0];
+let accessory=thomsCloset[2][1];
+
+console.log(`Thom is looking fierce in a ${shirt}, ${pants},${accessory}!"`);
 
 // IV. Functions
 // A.
+function printGreeting(str1){
+   console.log(`Hello there, ${str1}!`);
+}
+printGreeting("Slimer");
+
 // B.
+function printCool(str1){
+    console.log(`${str1} is cool `);
+ }
+ printCool("Slimer");
+ 
 // C.
+function calculateCube(num){
+    let volume=(num*num*num);
+
+    console.log(volume);
+}
+calculateCube(5);
 // D.
+function isVowel(char1){
+    let charValue= char1.toLowerCase().charAt(0);
+      if (charValue === "a"||charValue === "e"||charValue === "i"||charValue === "o"||charValue === "u") {
+         return true;
+        }
+        else{
+          return false;
+        }
+  
+  }
+  console.log(isVowel("A"));
+
 // E.
+function getTwoLengths(str1,str2){
+    let newArray=[str1.length,str2.length]
+    return newArray;
+
+}
+console.log(getTwoLengths("Hank", "Hippopopalous"));
+
 // F.
+function getMultipleLengths(str1){
+   let newArray1=[];
+    for(let i=0;i<str1.length;i++){
+         newArray1.push(str1[i].length);
+    }
+   
+    return newArray1;
+}
+console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
+
 // G.
+function maxOfThree(num1,num2,num3){
+    if(num1>=num2 && num1>=num3){
+        return num1;
+    }
+    else if(num2>=num1 && num2>=num3){
+        return num2;
+    }
+    else if(num3>=num1 && num3>=num2){
+        return num3;
+    }
+}
+
+console.log(maxOfThree(9,9,1));
+
 // H.
+//let arr2="";
+/**function printLongestWord(arr){
+    var prevSmallstr=arr[0].length;
+    var longstr=arr[0];
+
+     for(let i=1;i<arr.length;i++){
+
+         if(arr[i].length>prevSmallstr){
+            longstr=arr[i];
+            prevSmallstr=arr[i].length;
+         }
+     }
+     return longstr;
+    }*/
+
+//printLongestWord(["BoJack", "Princess", "Peanutbutter","qer"]);
+
+function printLongestWord(arr){
+    return arr.reduce((c,v)=>c.length>v.length ? c:v)
+    }
+   console.log(printLongestWord(["BoJack", "Princess", "Peanutbutter","qer"]));
 //_____________________________________________________________
 
 
@@ -331,12 +416,66 @@ console.log(kristynsCloset[5]);
 
 // V. Objects
 // A.
+const user={
+    name:"dee",
+    email:"dee@gmail.com",
+    age:9,
+    purchased:[]
+}
 // B.
+user.email="lee@gmail.com";
+user.age++
+console.log(user);
 // C.
+user.location="boston";
+
 // D.
+user.purchased.push("carbohydrates");
+user.purchased.push("peace of mind");
+user.purchased.push("Merino jodhpurs");
+console.log(user.purchased[2]);
 // E.
+user.friend={
+    name: "Grace Hopper",
+    age: 85,
+    location:"nyc",
+    purchased:[]
+}
+console.log(user);
+console.log(user.friend.name);
+console.log(user.friend.location);
+user.friend.age=55;
+user.friend.purchased.push("The One Ring");
+user.friend.purchased.push("A latte");
+console.log(user.friend.purchased[1]);
+
+
 // F.
+for(const prop in user){
+   console.log(`user.${prop}:${user[prop]}`);
+}
+
+for(const prop in user.friend){
+    console.log(`user.friend.${prop}:${user.friend[prop]}`);
+ }
 // G.
+function updateUser(){
+    user.age++;
+    user.name.toUpperCase();
+}
+//updateUser();
+
+
+function oldAndLoud(person){
+    person.age++;
+    person.name.toUpperCase();
+
+}
+//console.log(updateUser());
+console.log(user)
+
+oldAndLoud(user);
+console.log(user);
 //_____________________________________________________________
 
 
